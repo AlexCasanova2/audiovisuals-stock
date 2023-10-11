@@ -1,0 +1,101 @@
+<!-- HEADER -->
+{% include 'includes/header.html' %}
+
+<!-- CONTENIDO -->
+{% block content %}
+<div class="main-content">
+    <div class="page-content">
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Tandem Stock</h4>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item active">Crear material</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="float-start d-none d-sm-block">
+                            <a href="" class="btn btn-success">Guardar</a>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="page-content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="p-4">
+                                    {% if user.is_authenticated %}
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <button class="btn btn-success" type="submit">Subir Material</button>
+                                    </form>
+                                  {% else %}
+                                    <p>Debes iniciar sesión para ver tu perfil.</p>
+                                  {% endif %}
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- container-fluid -->
+    </div>
+    
+</div>
+{% endblock %}
+
+<!-- FOOTER -->
+{% include 'includes/footer.html' %}
+
+<style>
+    input{
+        display: block;
+        width: 100%;
+        padding: 0.47rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        appearance: none;
+        border-radius: 0.25rem;
+    }
+    body.authentication-bg.bg-primary {
+        background-color: #00abaa !important;
+    }
+    select{
+        display: block;
+        width: 100%;
+        padding: 0.47rem 1.75rem 0.47rem 0.75rem;
+        -moz-padding-start: calc(.75rem - 3px);
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 16px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+</style>

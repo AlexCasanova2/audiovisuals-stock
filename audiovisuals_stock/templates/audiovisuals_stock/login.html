@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load sass_tags %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!-- Agrega aquí tus enlaces a hojas de estilo CSS si es necesario -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/app-dark.css' %}">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/icons.css' %}">
+
+</head>
+
+
+<body class="authentication-bg bg-primary">
+    <div class="home-center">
+        <div class="home-desc-center">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="px-2 py-3">
+
+
+                                    <div class="text-center">
+                                        <a href="/login">
+                                            <img src="../../static/images/logo_tandem.png" height="120" alt="logo">
+                                        </a>
+
+                                        <h5 class="text-primary mb-2 mt-4">Benvingut!</h5>
+                                        <p class="text-muted">Inicia sessió per accedir.</p>
+                                    </div>
+
+                                    <form class="form-horizontal mt-4 pt-2" method="post">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Iniciar sessió</button>
+                                    </form>
+                                  
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center text-white">
+                            <p>¿Encara no tens compte? <a href="{% url 'signup' %}" class="fw-bold text-white">Registrar-se</a></p>
+                            <p>© <script>document.write(new Date().getFullYear())</script> Tandem Projects. Fet amb <i class="mdi mdi-heart text-danger"></i> per Àlex Casanova</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- End Log In page -->
+    </div>
+
+    @include("partials/vendor-scripts.html")
+
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>
+
+<style>
+    input{
+        display: block;
+        width: 100%;
+        padding: 0.47rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        appearance: none;
+        border-radius: 0.25rem;
+    }
+    body.authentication-bg.bg-primary {
+        background-color: #00abaa !important;
+    }
+</style>

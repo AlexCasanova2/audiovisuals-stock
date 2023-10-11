@@ -1,0 +1,236 @@
+<!-- HEADER -->
+{% include 'includes/header.html' %}
+
+<!-- CONTENIDO -->
+{% block content %}
+<div class="main-content">
+    <div class="page-content">
+        <div class="page-title-box">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="page-title">
+                            <h4>Tandem Stock</h4>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item active">Inici</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="float-start d-none d-sm-block">
+                            <a href="" class="btn btn-success">Afegir material</a>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="page-content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="p-4">
+                                    {% if user.is_authenticated %}
+                                    <p>Hola, {{ user.nombre }}</p>
+                                    <!-- Otros atributos del usuario que desees mostrar -->
+                                  {% else %}
+                                    <p>Debes iniciar sesión para ver tu perfil.</p>
+                                  {% endif %}
+                                  
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-4">Sales By Social Source
+
+                                </h4>
+
+                                <ul class="inbox-wid list-unstyled mb-0" style="padding-left:0px">
+                                    <li class="inbox-list-item">
+                                        <a href="#">
+                                            <div class="media">
+                                                <div class="ms-3 align-self-center">
+                                                    <div class="avatar-sm rounded bg-primary align-self-center">
+                                                        <span class="avatar-title">
+                                                            <i class="ti-facebook text-white font-size-18"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body overflow-hidden mt-1">
+                                                    <h5 class="font-size-15 mb-1">Facebook Ads</h5>
+                                                    <p class="text-muted mb-0">3.2k Sale - 4.2k Like</p>
+                                                </div>
+                                                <p class="ms-2 pt-3">
+                                                    <i class="mdi mdi-arrow-top-right text-success me-1"></i>50%
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="inbox-list-item">
+                                        <a href="#">
+                                            <div class="media">
+                                                <div class="ms-3 align-self-center">
+                                                    <div class="avatar-sm rounded bg-info align-self-center">
+                                                        <span class="avatar-title">
+                                                            <i
+                                                                class="ti-twitter-alt text-white font-size-18"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body overflow-hidden mt-1">
+                                                    <h5 class="font-size-15 mb-1">Twitter Ads</h5>
+                                                    <p class="text-muted mb-0">3.1k Sale - 3.7k Like</p>
+                                                </div>
+                                                <p class="ms-2 pt-3">
+                                                    <i class="mdi mdi-arrow-top-right text-success me-1"></i>45%
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="inbox-list-item">
+                                        <a href="#">
+                                            <div class="media">
+                                                <div class="ms-3 align-self-center">
+                                                    <div class="avatar-sm rounded bg-danger align-self-center">
+                                                        <span class="avatar-title">
+                                                            <i class="ti-linkedin text-white font-size-18"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body overflow-hidden mt-1">
+                                                    <h5 class="font-size-15 mb-1">linkedin Ads</h5>
+                                                    <p class="text-muted mb-0">4.3k Sale - 4.3k Like</p>
+                                                </div>
+                                                <p class="ms-2 pt-3">
+                                                    <i
+                                                        class="mdi mdi-arrow-bottom-right text-danger me-1"></i>30%
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="inbox-list-item">
+                                        <a href="#">
+                                            <div class="media">
+                                                <div class="ms-3 align-self-center">
+                                                    <div class="avatar-sm rounded bg-danger align-self-center">
+                                                        <span class="avatar-title">
+                                                            <i class="ti-youtube text-white font-size-18"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body overflow-hidden mt-1">
+                                                    <h5 class="font-size-15 mb-1">Youtube Ads</h5>
+                                                    <p class="text-muted mb-0">4.2k Sale - 3.7k Like</p>
+                                                </div>
+                                                <p class="ms-2 pt-3">
+                                                    <i class="mdi mdi-arrow-top-right text-success me-1"></i>35%
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="inbox-list-item">
+                                        <a href="#" class="pb-0">
+                                            <div class="media">
+                                                <div class="ms-3 align-self-center">
+                                                    <div class="avatar-sm rounded bg-dark align-self-center">
+                                                        <span class="avatar-title">
+                                                            <i class="ti-github text-white font-size-18"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body overflow-hidden mt-1">
+                                                    <h5 class="font-size-15 mb-1">GitHub Ads</h5>
+                                                    <p class="text-muted mb-2">4.9k Sale - 4.1k Like</p>
+                                                </div>
+                                                <p class="ms-2 pt-3">
+                                                    <i class="mdi mdi-arrow-top-right text-success me-1"></i>40%
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-4">Materiales a devovler</h4>
+                                <div class="table-responsive">
+                                    {% if user %}
+                                    <div style="display:none;">
+                                        <p>Hola, {{ user.nombre }}</p>
+                                        <p>Email: {{ user.email }}</p>
+                                    </div>
+                                    <!-- Otros atributos del usuario que desees mostrar -->
+                                        {% if deudas_pendientes %}
+                                        {% for deuda in deudas_pendientes %}
+                                        <div class="alert alert-danger mb-0" role="alert">
+                                            Tienes materiales que devolver.
+                                        </div>
+                                        <table id="datatable-buttons"
+                                    class="table table-striped table-bordered dt-responsive nowrap"
+                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Cantidad</th>
+                                            <!-- Puedes agregar más encabezados si es necesario -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for deuda in deudas_pendientes %}
+                                        <tr>
+                                            <td>{{ deuda.material.nombre }}</td>
+                                            <td>{{ deuda.cantidad_adeudada }}</td>
+                                            <td>
+                                                <form action="{% url 'view_profile' %}" method="post">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="deuda_id" value="{{ deuda.id }}">
+                                                <button type="submit">Saldar Deuda</button>
+                                                </form>
+                                            </td>
+                                            <!-- Agrega más columnas si es necesario -->
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                        {% endfor %}
+                                        {% else %}
+                                        <div class="alert alert-success" role="alert">
+                                            No tienes deudas pendientes.
+                                        </div>
+                                        {% endif %}
+                                    
+                                    {% else %}
+                                    <p>Debes iniciar sesión para ver tu perfil.</p>
+                                    {% endif %}
+                                </div>
+                                <!-- end table-responsive -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- container-fluid -->
+    </div>
+    
+</div>
+{% endblock %}
+
+<!-- FOOTER -->
+{% include 'includes/footer.html' %}
